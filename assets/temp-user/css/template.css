@@ -351,7 +351,7 @@ header .navbar {
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	font-weight: 900;
-	color: #f48840;
+	color: #0b4d70;
 }
 
 .blog-posts .down-content h4 {
@@ -403,10 +403,9 @@ header .navbar {
 }
 
 .blog-posts .down-content p {
-	padding: 25px 0px;
-	margin: 25px 0px;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #eee;
+	padding: 10px 0px;
+	/* margin-bottom: 10px; */
+	/* margin: 10px 0px; */
 }
 
 .blog-posts .down-content ul.post-share {
@@ -420,7 +419,7 @@ header .navbar {
 
 .blog-posts .down-content ul.post-tags li:first-child i,
 .blog-posts .down-content ul.post-share li:first-child i {
-	color: #f48840;
+	color: #0b4d70;
 	margin-right: 5px;
 }
 

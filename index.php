@@ -6,7 +6,7 @@ $kategori = read_kategori("SELECT * FROM categories");
 
 $artikel = read_kategori("SELECT * FROM articles ORDER BY RAND() LIMIT 5");
 
-$artikel_rand = read_kategori("SELECT * FROM articles ORDER BY RAND() LIMIT 3");
+$artikel_rand = read_kategori("SELECT * FROM articles INNER JOIN categories ON articles.id_kategori = categories.id_kategori ORDER BY RAND() LIMIT 3");
 
 ?>
 
@@ -81,33 +81,23 @@ $artikel_rand = read_kategori("SELECT * FROM articles ORDER BY RAND() LIMIT 3");
                                         <img src="assets/images/<?= $row['gambar'] ?>" alt="">
                                     </div>
                                     <div class="down-content">
-                                        <span>Lifestyle</span>
+                                        <span><?= $row['kategori'] ?></span>
                                         <a href="post-details.html">
                                             <h4><?= $row['judul'] ?></h4>
                                         </a>
                                         <ul class="post-info">
                                             <li><a href="#"><?= $row['author'] ?></a></li>
                                             <li><a href="#"> <?= date("d-m-Y", strtotime($row['tgl_release'])); ?></a></li>
-                                            <li><a href="#">12 Comments</a></li>
                                         </ul>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sit aut cupiditate quos adipisci hic molestiae dicta perspiciatis minima tenetur sunt, repellendus omnis ad sed delectus? Nam voluptatum laboriosam ab, vel architecto numquam aut tempora ipsa. Ab incidunt in et error hic consectetur voluptatem nesciunt, inventore libero! Ut, fugiat reprehenderit.</p>
                                         <p>
-                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit inventore beatae dignissimos debitis soluta sed blanditiis atque eos dolorum ducimus nam, consequuntur nulla laborum temporibus repudiandae, architecto quo reprehenderit expedita quidem vitae. Consequatur, sunt sapiente ad laudantium molestias impedit nulla iste? Voluptatem eligendi distinctio nemo laudantium asperiores beatae, officia, sapiente suscipit repellendus eaque atque quae eos quisquam quia animi maxime nesciunt nulla iste? Sit omnis cum mollitia perspiciatis deserunt dolore dolor voluptate, aperiam veritatis voluptatibus laudantium voluptatem corporis culpa temporibus ea sed, officia expedita, consectetur reprehenderit aliquid numquam tempora quo ducimus? Laboriosam repudiandae quo dolor maiores maxime atque totam ipsa.
+                                            <?= substr($row['isi'], 0, 300); ?>
                                         </p>
                                         <div class="post-options">
                                             <div class="row">
                                                 <div class="col-6">
                                                     <ul class="post-tags">
                                                         <li><i class="fa fa-tags"></i></li>
-                                                        <li><a href="#">Beauty</a>,</li>
-                                                        <li><a href="#">Nature</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-6">
-                                                    <ul class="post-share">
-                                                        <li><i class="fa fa-share-alt"></i></li>
-                                                        <li><a href="#">Facebook</a>,</li>
-                                                        <li><a href="#"> Twitter</a></li>
+                                                        <li><a>Majasastraskaneda</a>,</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -130,13 +120,13 @@ $artikel_rand = read_kategori("SELECT * FROM articles ORDER BY RAND() LIMIT 3");
             <div class="col-lg-4">
                 <div class="sidebar">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <!-- <div class="col-lg-12">
                             <div class="sidebar-item search">
                                 <form id="search_form" name="gs" method="GET" action="#">
                                     <input type="text" name="q" class="searchText" placeholder="type to search..." autocomplete="on">
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="col-lg-12">
                             <div class="sidebar-item recent-posts">
