@@ -24,7 +24,7 @@ $artikel_rand = read_kategori("SELECT * FROM articles INNER JOIN categories ON a
                     <img src="assets/images/<?= $row['gambar'] ?>" alt="">
                     <div class="item-content">
                         <div class="main-content">
-                            <a href="post-details.html">
+                            <a href="single_post.php?id=<?= $row['id_artikel'] ?>">
                                 <h4><?= $row['judul'] ?></h4>
                             </a>
                             <ul class="post-info">
@@ -82,7 +82,7 @@ $artikel_rand = read_kategori("SELECT * FROM articles INNER JOIN categories ON a
                                     </div>
                                     <div class="down-content">
                                         <span><?= $row['kategori'] ?></span>
-                                        <a href="post-details.html">
+                                        <a href="single_post.php?id=<?= $row['id_artikel'] ?>">
                                             <h4><?= $row['judul'] ?></h4>
                                         </a>
                                         <ul class="post-info">
@@ -111,7 +111,7 @@ $artikel_rand = read_kategori("SELECT * FROM articles INNER JOIN categories ON a
 
                         <div class="col-lg-12">
                             <div class="main-button">
-                                <a href="blog.html">View All Posts</a>
+                                <a href="blog.php">View All Posts</a>
                             </div>
                         </div>
 
@@ -140,7 +140,7 @@ $artikel_rand = read_kategori("SELECT * FROM articles INNER JOIN categories ON a
                                         <?php foreach ($artikel as $row) : ?>
 
                                             <li>
-                                                <a href="post-details.html">
+                                                <a href="single_post.php?id=<?= $row['id_artikel'] ?>">
                                                     <h5><?= $row['judul'] ?></h5>
                                                     <span>
                                                         <?= date("d-m-Y", strtotime($row['tgl_release'])); ?>
@@ -163,7 +163,7 @@ $artikel_rand = read_kategori("SELECT * FROM articles INNER JOIN categories ON a
                                     <ul>
                                         <?php foreach ($kategori as $row) : ?>
 
-                                            <li><a href="#"><?= $row['kategori'] ?></a></li>
+                                            <li><a href="filter_post.php?kategori=<?= $row['id_kategori'] ?>"><?= $row['kategori'] ?></a></li>
 
                                         <?php endforeach; ?>
                                     </ul>
