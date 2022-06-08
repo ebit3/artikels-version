@@ -19,7 +19,7 @@
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/temp-user/css/fontawesome.css">
     <link rel="stylesheet" href="assets/temp-user/css/template.css?<?php echo time() ?>">
-    <link rel="stylesheet" href="assets/temp-user/css/owl.css">
+    <link rel="stylesheet" href="assets/temp-user/css/owl.css?<?= time() ?>">
 
 </head>
 
